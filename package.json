@@ -3,14 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
-
   "scripts": {
     "dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
