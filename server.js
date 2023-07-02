@@ -1,7 +1,7 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
-//const PORT = 3001;
+const PORT = 3001;
 
 const app = express()
 app.use(bodyParser.urlencoded({ extended: true }))
@@ -26,7 +26,7 @@ app.use('/order', orderRoute)
 const dashboardRoute = require('./routes/dashboard.routes')
 app.use('/dashboard', dashboardRoute)
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || PORT, () => {
   console.log(`Server is running on port ${PORT}.`);
 });
 
