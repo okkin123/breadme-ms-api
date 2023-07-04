@@ -188,7 +188,7 @@ module.exports = {
       ],
       function (err, data, fields) {
         if (err) {
-          res.send(err);
+          console.log(err);
         } else {
           res.status(201).json({
             status: "Success",
