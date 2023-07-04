@@ -209,7 +209,7 @@ module.exports = {
           orderSales.price_per_pc,
           orderSales.price_per_pack,
           orderSales.qty,
-          orderSales.balance,
+          Number(orderSales.balance),
           orderSales.sold,
           orderSales.subtotal,
           orderSales.unit_id,
@@ -224,12 +224,12 @@ module.exports = {
               "INSERT INTO tbl_old_stock(date, employee_id, category_id, qty, price_per_pc, unit_id) VALUES ?",
               [
                 orderSaleData
-                  .filter((orderSales) => parseInt(orderSales.old_stock) !== 0)
+                  .filter((orderSales) => Number(orderSales.old_stock) !== 0)
                   .map((orderSales) => [
                     orderSales.order_date,
                     orderSales.employee_id,
                     orderSales.category_id,
-                    orderSales.old_stock,
+                    Number(orderSales.old_stock),
                     orderSales.price_per_pc,
                     orderSales.unit_id,
                   ]),
@@ -249,7 +249,7 @@ module.exports = {
                     orderDiscount.date,
                     orderDiscount.employee_id,
                     orderDiscount.category_id,
-                    orderDiscount.qty,
+                    Number(orderDiscount.qty),
                     orderDiscount.price,
                     orderDiscount.unit_id,
                   ]),
