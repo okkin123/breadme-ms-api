@@ -67,7 +67,7 @@ module.exports = {
           inventoryPiece.date,
           inventoryPiece.category_id,
           inventoryPiece.product_id,
-          inventoryPiece.qty,
+          Number(inventoryPiece.qty),
           inventoryPiece.price_per_pc,
           inventoryPiece.price_per_pack,
           unitID,
