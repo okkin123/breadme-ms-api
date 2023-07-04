@@ -61,7 +61,9 @@ module.exports = {
     conn.query(
       "INSERT INTO tbl_stock_in(date, category_id, product_id, qty, price_per_pc, price_per_pack, unit_id) VALUES ?",
       [
-        inventoryPieceData.map((inventoryPiece) => [
+        inventoryPieceData
+        .filter((inventoryPiece)=> Number(inventoryPiece.qty ) > 0)
+        .map((inventoryPiece) => [
           inventoryPiece.date,
           inventoryPiece.category_id,
           inventoryPiece.product_id,
